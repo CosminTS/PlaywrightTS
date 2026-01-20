@@ -1,0 +1,40 @@
+import {test} from '@playwright/test';
+
+test("Handle dropdown", async ({page}) => {
+
+
+await page.goto("https://www.lambdatest.com/selenium-playground/select-dropdown-demo");
+await page.selectOption("#select-demo", {
+//label: "Friday"
+//value: "Friday",
+index: 5
+});
+
+await page.waitForTimeout(3000);
+
+await page.selectOption("#multi-select", [{
+    label: "Texas"
+    }, {
+    index: 2
+    }, {
+    value: "Washington"
+}])
+
+});
+
+test("Handle Jquery dropdown", async ({page}) => {
+    await page.goto("https://www.lambdatest.com/selenium-playground/jquery-dropdown-search-demo");
+
+    await selectCountry("India");
+    await selectCountry("Denmark");
+
+    // await page.waitForTimeout(3000);
+
+    async function selectCountry(countryName: string) {
+        await page.locator("#country+span").click();
+        await page.locator("ul#select2-country-results")
+            .locator("li", {
+                hasText: countryName
+            }).click();
+    }
+});
