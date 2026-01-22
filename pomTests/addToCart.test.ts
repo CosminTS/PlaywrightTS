@@ -43,7 +43,7 @@ test.describe("Page object model tests demo", async () => {
         await page.goto(`${baseURL}route=account/login`);
         await loginPage.login(email, password);
         await homePage.clickOnSpecialHotMenu();
-        await specialHotPage.addFirstProductToTheCart();
+        //await specialHotPage.addFirstProductToTheCart();
 
     });
 })

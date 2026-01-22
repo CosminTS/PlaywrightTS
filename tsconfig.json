@@ -9,6 +9,7 @@
     "module": "esnext",
     "moduleResolution": "Bundler",
     "target": "esnext",
+    "resolveJsonModule": true,
     "types": [
       "node"
     ],
