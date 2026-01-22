@@ -3,9 +3,8 @@ import { PlaywrightTestConfig } from '@playwright/test';
 const config: PlaywrightTestConfig = {
   testMatch: ["pomTests/addToCart.test.ts"],
   use: {
-    browserName: 'chromium', // Options: 'chromium', 'firefox', 'webkit', 'chrome'
     baseURL: "https://ecommerce-playground.lambdatest.io/index.php?",
-    headless: false,
+    headless: process.env.CI ? true : false,
     viewport: null,
     launchOptions: {
       args: ["--start-maximized"],
