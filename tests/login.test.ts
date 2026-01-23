@@ -1,6 +1,24 @@
-import {chromium, test } from "@playwright/test";
+import { chromium, test } from "@playwright/test";
 
-test("Login test demo", async() => {
+const capabilities = {
+    browserName: "Chrome", // Browsers allowed: `Chrome`, `MicrosoftEdge`, `pw-chromium`, `pw-firefox` and `pw-webkit`
+    browserVersion: "latest",
+    "LT:Options": {
+        platform: "Windows 10",
+        build: "Playwright Test Build",
+        name: "Playwright Test",
+        user: process.env.LT_USERNAME,
+        accessKey: process.env.LT_ACCESS_KEY,
+        network: true,
+        video: true,
+        console: true,
+        tunnel: false, // Add tunnel configuration if testing locally hosted webpage
+        tunnelName: "", // Optional
+        geoLocation: '', // country code can be fetched from https://www.lambdatest.com/capabilities-generator/
+    },
+};
+
+test("Login test demo", async () => {
     const browser = await chromium.launch({
         headless: false,
     });
@@ -16,5 +34,7 @@ test("Login test demo", async() => {
     await page.fill("input[name='password']", "Test@12345")
     await page.click("input[value='Login']")
 
-    await page.waitForTimeout(5000);
+    await page.close();
+    await context.close();
+    await browser.close();
 })
