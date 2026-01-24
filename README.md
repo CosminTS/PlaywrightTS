@@ -1,4 +1,4 @@
-A Playwright + TypeScript automated testing framework/sample DEMO repository for end‑to‑end (E2E) tests using Playwright Test.
+A Playwright + TypeScript automated testing framework for end-to-end (E2E) tests on the LambdaTest e-commerce playground site.
 
 This project includes:
 
@@ -11,6 +11,8 @@ pages/ directory containing page abstractions
 Config and utilities for running Playwright tests
 
 JSON reports output in jsonReports/
+
+Test plans in Markdown format
 
 🗂️ Table of Contents
 
@@ -26,20 +28,29 @@ JSON reports output in jsonReports/
 
 📄 Reports
 
+📋 Test Plans
+
 💡 Best Practices
 
 🤝 Contributing
 
 📦 Project Structure
 .
-├── .github/                # GitHub CI workflows (if present)
+├── .github/                # GitHub CI workflows and prompts
 ├── jsonReports/           # JSON test result outputs
 ├── pages/                 # Page Objects definitions
 ├── pomTests/              # POM‑based test cases
+├── specs/                 # Additional specs and documentation
 ├── tests/                 # Standalone test specs
-├── playground.config.ts   # Playwright config
+├── base/                  # Base fixtures and utilities
+├── fixture/               # Custom fixtures
+├── test-data/             # Test data files
+├── uploadItems/           # Files for upload tests
+├── playwright.config.ts   # Playwright config
 ├── tsconfig.json          # TypeScript config
 ├── package.json           # npm project config
+├── check-latest-blog-article.spec.ts  # Test for checking latest blog article
+├── blog-test-plan.md      # Test plan for blog functionality
 └── README.md              # This document
 
 
@@ -86,6 +97,11 @@ Run a specific test file:
 npx playwright test tests/login.spec.ts
 
 
+Run the blog article test:
+
+npx playwright test check-latest-blog-article.spec.ts
+
+
 Run tests by name pattern:
 
 npx playwright test -g "login"
@@ -129,7 +145,15 @@ jsonReports/
 
 You can open these results in your CI or convert them to HTML or other formats.
 
-💡 Best Practices
+� Test Plans
+
+Test plans are documented in Markdown files for planning and generating tests:
+
+- blog-test-plan.md: Plan for blog-related tests, including checking the latest blog article.
+
+These plans outline test scenarios, steps, and expected results to guide test development.
+
+�💡 Best Practices
 
 Use locators instead of page.click(selector) when possible
 
