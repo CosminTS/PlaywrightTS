@@ -7,8 +7,8 @@ const capabilities = {
         platform: "Windows 10",
         build: "Playwright Test Build",
         name: "Playwright Test",
-        user: process.env.LT_USERNAME,
-        accessKey: process.env.LT_ACCESS_KEY,
+        user: "nimsoc89",
+        accessKey: "LT_Gg4Ojh04jd2JEfEbmBFqwY1Z0YQUf8lHzNZyfwrdFjCdMox",
         network: true,
         video: true,
         console: true,
@@ -19,9 +19,8 @@ const capabilities = {
 };
 
 test("Login test demo", async () => {
-    const browser = await chromium.launch({
-        headless: false,
-    });
+    const browser = await chromium.connect(`wss://cdp.lambdatest.com/playwright?capabilities=
+        ${encodeURIComponent(JSON.stringify(capabilities))}`);
     const context = await browser.newContext();
     const page = await context.newPage();
 
