@@ -93,12 +93,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4102,
+                      "duration": 4418,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-22T19:24:57.570Z",
+                      "startTime": "2026-01-25T12:18:42.926Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -133,12 +133,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3293,
+                      "duration": 3310,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-22T19:25:01.925Z",
+                      "startTime": "2026-01-25T12:18:48.023Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -173,7 +173,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4466,
+                      "duration": 5338,
                       "errors": [],
                       "stdout": [
                         {
@@ -182,7 +182,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-22T19:25:05.235Z",
+                      "startTime": "2026-01-25T12:18:51.356Z",
                       "annotations": [],
                       "attachments": [
                         {
@@ -208,8 +208,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-22T19:24:56.879Z",
-    "duration": 13006.111,
+    "startTime": "2026-01-25T12:18:41.987Z",
+    "duration": 14972.431999999999,
     "expected": 3,
     "skipped": 0,
     "unexpected": 0,
